@@ -1,6 +1,6 @@
 package offer;
 /**
- * 
+ * 旋转数组的最小数字。
  * 题目描述
 
 	把一个数组最开始的若干个元素搬到数组的末尾，我们称之为数组的旋转。
@@ -33,8 +33,8 @@ public class _08MinNumInRotatedArray {
 	    int indexMid = index1; //中间指针
 	    
 	    while(array[index1] >= array[index2]){
-	    	if(index2 - index1 == 1){ //当两个指针相邻时候，就是停止的时候。
-	    		indexMid = index2;
+	    	if(index2 - index1 == 1){ //当两个指针相邻时候，就是停止的时候。后面的数字是最小的
+	    		indexMid = index2; 
 	    		break;
 	    	}
 	    	indexMid = (index1 + index2)/2; //中间指针
