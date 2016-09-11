@@ -1,6 +1,6 @@
 package offer;
 /**
- * 
+ * 重建二叉树.
  * 题目描述
 
 	输入某二叉树的前序遍历和中序遍历的结果，请重建出该二叉树。假设输入的前序遍历和中序遍历的结果中都不含重复的数字。
@@ -18,10 +18,10 @@ public TreeNode reConstructBinaryTree(int [] pre,int [] in) {
     }
 
 public TreeNode reConstructBinary(int[] pre,int startPre,int endPre,int[] in, int startIn,int endIn){
-	if(endPre < startPre || endIn < endIn)
+	if(endPre < startPre || endIn < startIn)
 		return null;
-	TreeNode root = new TreeNode(pre[startPre]);
-	for(int i = startIn; i <=endIn; i++){
+	TreeNode root = new TreeNode(pre[startPre]); //前序遍历的第一个节点就是根节点。
+	for(int i = startIn; i <=endIn; i++){ //在中序遍历中找到根节点，则左侧为左子树，右侧为右子树。递归
 		if(in[i] == pre[startPre]){
 			root.left = reConstructBinary(pre, startPre+1, startPre + i - startIn, in, startIn, i-1);
 			root.right = reConstructBinary(pre, startPre + i -startIn +1, endPre, in, i + 1, endIn);
