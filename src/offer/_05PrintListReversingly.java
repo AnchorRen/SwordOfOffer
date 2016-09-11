@@ -2,7 +2,20 @@ package offer;
 
 import java.util.ArrayList;
 import java.util.Stack;
-
+/**
+ * 从尾到头打印链表.
+ * 	
+ * 题目描述
+	输入一个链表，从尾到头打印链表每个节点的值。 
+     输入描述:
+	输入为链表的表头
+    输出描述:
+	输出为需要打印的“新链表”的表头
+	
+	
+ * @author REN
+ * @date 2016年9月11日 上午9:59:12
+ */
 public class _05PrintListReversingly {
 
 	/**
@@ -20,9 +33,9 @@ public class _05PrintListReversingly {
 		
 		if(pNode != null){
 			if(pNode.next != null){
-				list = printListFromTailToHead(pNode.next);
+				list = printListFromTailToHead(pNode.next); //先递归添加子结点的值
 			}
-			list.add(pNode.val);
+			list.add(pNode.val); //再添加本节点的值。
 		}
 		return  list;
     }
